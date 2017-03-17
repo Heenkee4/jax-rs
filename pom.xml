@@ -36,12 +36,22 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>se.heen</groupId>
+			<groupId>se.mawe</groupId>
 			<artifactId>spring-jpa-project-final</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>se.heen</groupId>
+			<groupId>se.mawe</groupId>
+			<artifactId>spring-jpa-project</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>se.mawe</groupId>
+			<artifactId>spring-jpa-project-final</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>se.mawe</groupId>
 			<artifactId>spring-jpa-project</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
@@ -55,6 +65,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
