@@ -1,6 +1,5 @@
 package se.heen.model;
 
-import se.mawe.model.WorkItem.Status;
 
 public class WorkItem {
 	
