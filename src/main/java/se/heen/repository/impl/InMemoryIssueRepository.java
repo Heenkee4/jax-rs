@@ -21,9 +21,6 @@ public class InMemoryIssueRepository implements IssueJaxRSRepository {
 		issues.put(number, issue);
 
 		return issue;
-//		@Override
-//		public Customer update(Customer customer) {
-//			return customers.replace(customer.getId(), customer);
 		
 	}
 	public Issue get(String number) {
