@@ -3,6 +3,7 @@ package resource;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -21,24 +22,31 @@ import javax.ws.rs.core.UriInfo;
 import org.springframework.stereotype.Component;
 
 import se.heen.model.Issue;
+import se.heen.repository.IssueJaxRSRepository;
 
 
 @Component
-@Path("/IssueResource")
-@Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+//@Path("/issue")
+//@Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+//@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 public class IssueResource {
+	
 	
 	private static final Map<String, Issue> issues = new HashMap<>();
 
 	@Context
 	private UriInfo uriInfo;
 	
+	private final IssueJaxRSRepository repository;
+	
+	public IssueResource(IssueJaxRSRepository repository) {
+		this.repository = repository;
+	}
+
+	
 	@POST
-	public Response createIssue(String name, String number) {
-		Issue issue = new Issue(name, number);
-		issues.put(issue.getNumber(), issue);
-		
+	public Response createIssue(Issue issue) {
+		issue = repository.createIssue();
 		URI location = uriInfo.getAbsolutePathBuilder().path(issue.getNumber()).build();
 		return Response.created(location).build();		
 	}
