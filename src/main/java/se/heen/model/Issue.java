@@ -17,6 +17,11 @@ public class Issue {
 		return name;
 	}
 	
+	public Issue setNumber(String number) {
+		this.number = number;
+		return null;
+	}
+	
 	@Override
 	public String toString() {
 		return number + ", " + name;
